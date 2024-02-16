@@ -293,3 +293,133 @@ In this example:
 - The `UserRepository` extends `JpaRepository`, providing basic CRUD functionalities.
 
 This is a basic example, and you may need to customize it based on your specific requirements. Additionally, you might want to add validation, error handling, and security measures depending on your application's needs.
+
+# Annotations
+<hr>
+Spring Boot relies heavily on annotations to simplify the configuration and behavior of your applications. Here are some key annotations used in Spring Boot:
+
+### 1. **Main Application Class:**
+
+- **`@SpringBootApplication`:** This annotation is a combination of `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. It is typically placed on the main class of your application.
+
+    ```java
+    @SpringBootApplication
+    public class MyApplication {
+        public static void main(String[] args) {
+            SpringApplication.run(MyApplication.class, args);
+        }
+    }
+    ```
+
+### 2. **Controller Annotations:**
+
+- **`@RestController`:** Indicates that the class is a RESTful controller. It combines `@Controller` and `@ResponseBody`.
+
+    ```java
+    @RestController
+    public class MyController {
+        // Controller methods...
+    }
+    ```
+
+- **`@RequestMapping`:** Maps HTTP requests to handler methods. You can use specialized versions like `@GetMapping`, `@PostMapping`, etc.
+
+    ```java
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello, Spring Boot!";
+    }
+    ```
+
+### 3. **Dependency Injection Annotations:**
+
+- **`@Autowired`:** Injects dependencies automatically. It can be used on fields, methods, and constructors.
+
+    ```java
+    @Service
+    public class MyService {
+    
+        private final MyRepository myRepository;
+    
+        @Autowired
+        public MyService(MyRepository myRepository) {
+            this.myRepository = myRepository;
+        }
+    }
+    ```
+
+### 4. **Component Annotations:**
+
+- **`@Component`:** Indicates that a class is a Spring component. Spring will automatically detect and register it as a bean.
+
+    ```java
+    @Component
+    public class MyComponent {
+        // Component logic...
+    }
+    ```
+
+- **`@Service`, `@Repository`:** Specializations of `@Component` for service and repository classes.
+
+### 5. **Configuration Annotations:**
+
+- **`@Configuration`:** Indicates that a class declares one or more `@Bean` methods. It is often used in combination with `@Autowired`.
+
+    ```java
+    @Configuration
+    public class MyConfig {
+    
+        @Bean
+        public MyBean myBean() {
+            return new MyBean();
+        }
+    }
+    ```
+
+### 6. **JPA Annotations:**
+
+- **`@Entity`:** Marks a class as a JPA entity, representing a table in the database.
+
+    ```java
+    @Entity
+    public class User {
+        // Entity properties...
+    }
+    ```
+
+- **`@Repository`:** Indicates that the class is a Spring Data repository.
+
+### 7. **Logging Annotations:**
+
+- **`@Slf4j`:** A Lombok annotation that automatically generates a logger field for the class.
+
+    ```java
+    @Slf4j
+    public class MyService {
+        // Use the 'log' field for logging
+    }
+    ```
+
+### 8. **Security Annotations:**
+
+- **`@EnableWebSecurity`:** Used to enable Spring Security in a Spring Boot application.
+
+    ```java
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        // Security configuration...
+    }
+    ```
+
+### 9. **Testing Annotations:**
+
+- **`@SpringBootTest`:** Indicates that a class is a Spring Boot test.
+
+    ```java
+    @SpringBootTest
+    public class MyApplicationTests {
+        // Test methods...
+    }
+    ```
+
+These are just a few of the many annotations provided by Spring Boot. The framework uses annotations extensively to simplify configuration and reduce boilerplate code. Depending on your application's needs, you may encounter and use additional annotations for features like caching, messaging, and more.
