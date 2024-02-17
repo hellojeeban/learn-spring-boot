@@ -74,7 +74,7 @@ You should see the message "Hello, Spring Boot!".
    - You can package your application as a JAR or WAR file and run it using `java -jar`.
 
 This is just a basic introduction to Spring Boot. As you delve deeper, you'll encounter features like data access with Spring Data, security with Spring Security, and more. Feel free to ask for more specific details or guidance on any aspect of Spring Boot!
-### Application.properties
+## Application.properties
 <hr>
 In a Spring Boot application, `application.properties` is a configuration file that allows you to define various settings for your application. It is a key-value pair file where each line represents a property and its value. This file is typically located in the `src/main/resources` directory of your project.
 
