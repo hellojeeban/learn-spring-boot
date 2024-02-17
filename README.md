@@ -293,6 +293,79 @@ In this example:
 - The `UserRepository` extends `JpaRepository`, providing basic CRUD functionalities.
 
 This is a basic example, and you may need to customize it based on your specific requirements. Additionally, you might want to add validation, error handling, and security measures depending on your application's needs.
+# Operation In Postman
+<hr>
+To perform CRUD (Create, Read, Update, Delete) operations in Postman, you can use HTTP methods (GET, POST, PUT, DELETE) and send requests to your API endpoints. Below are the steps for each CRUD operation:
+
+### 1. **Create (POST) Operation:**
+
+1. Open Postman.
+
+2. Select the request type as `POST`.
+
+3. Enter the API endpoint URL.
+
+4. Go to the "Body" tab and choose the `raw` option.
+
+5. Enter the JSON data for creating a resource.
+
+   Example JSON for creating a user:
+   ```json
+   {
+       "username": "john_doe",
+       "email": "john.doe@example.com"
+   }
+   ```
+
+6. Click on the "Send" button to submit the POST request.
+
+### 2. **Read (GET) Operation:**
+
+1. Open Postman.
+
+2. Select the request type as `GET`.
+
+3. Enter the API endpoint URL.
+
+4. Click on the "Send" button to submit the GET request.
+
+### 3. **Update (PUT) Operation:**
+
+1. Open Postman.
+
+2. Select the request type as `PUT`.
+
+3. Enter the API endpoint URL.
+
+4. Go to the "Body" tab and choose the `raw` option.
+
+5. Enter the JSON data for updating a resource.
+
+   Example JSON for updating a user:
+   ```json
+   {
+       "username": "john_doe_updated",
+       "email": "john.doe.updated@example.com"
+   }
+   ```
+
+6. Click on the "Send" button to submit the PUT request.
+
+### 4. **Delete (DELETE) Operation:**
+
+1. Open Postman.
+
+2. Select the request type as `DELETE`.
+
+3. Enter the API endpoint URL.
+
+4. Click on the "Send" button to submit the DELETE request.
+
+These are general steps, and the specifics will depend on your API design and the structure of your endpoints. Ensure that you have the correct API endpoint URLs and provide the necessary data in the request body for POST and PUT requests.
+
+Remember to handle error responses appropriately and check the response status and content for successful or unsuccessful CRUD operations.
+
+Make sure your API is correctly implemented to handle these HTTP methods and their corresponding operations. Additionally, always follow best practices for API design and security.
 
 # Annotations
 <hr>
